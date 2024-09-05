@@ -13,11 +13,12 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./hello-rust
 
     steps:
     - uses: actions/checkout@v4
-    - name: Adjust CWD
-      run: cd hello-rust
     - name: Build
       run: cargo build --verbose
     - name: Run tests
