@@ -16,8 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-      with:
-        path: ./hello-rust
+    - name: Adjust CWD
+      run: cd hello-rust
     - name: Build
       run: cargo build --verbose
     - name: Run tests
